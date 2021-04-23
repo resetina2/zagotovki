@@ -105,5 +105,17 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
   flex: 0 0 33%;
 }
 
+//obvodka kartinki krygom
 
+.item-about__icon {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 92px;
+  height: 92px;
+  border: 2px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 40px 0;
+}
 
