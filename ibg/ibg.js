@@ -30,6 +30,18 @@ function ibg(){
       background-position: center;
       img{display: none;}
     }
+.main-screen {
+  flex: 1 0 100%;
+  position: relative;
+}
+
+.main-screen__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 
 //html
 <div class="main-screen">
