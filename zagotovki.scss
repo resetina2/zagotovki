@@ -1,3 +1,13 @@
+//delat' kartinky kryglyyu esli ona flex element
+&__logo {
+    flex: 0 0 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    img {
+      max-width: 100%;
+    }
+
 //цыкл окружности
 @mixin circle($width, $color) {
   width: $width;
