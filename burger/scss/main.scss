@@ -1,0 +1,156 @@
+@import "null.scss";
+html,body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5e5373;
+    z-index: 2;
+  }
+  &__body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  }
+  &__logo {
+    flex: 0 0 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    z-index: 3;
+    img {
+      max-width: 100%;
+    }
+  }
+  &__list {
+    display: flex;
+    position: relative;
+    z-index: 2;
+  }
+  &__link {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+  li {
+    margin-left: 20px;
+  }
+}
+
+//menu byrgera
+@media (max-width:767px) {
+  .header__burger {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 3;
+    &::before, &::after {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease 0s;//animacuya
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      position: absolute;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      top: 9px;
+      transition: all 0.3s ease 0s;//animacuya
+    }
+  }
+  //delaem krestik s nawego burger menu, v js propisan novui class
+  .header__burger.active::before{
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .header__burger.active::after{
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .header__burger.active span{
+    transform: scale(0);
+  }
+  //konec krestika
+  .header__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #18b5a4;
+    padding: 70px 10px 20px 10px;
+    transition: all 0.3s ease 0s;
+    overflow: auto;
+  }
+  .header__menu.active {
+    top: 0;
+  }
+  .header__body {
+    height: 40px;
+  }
+  .header__logo {
+    flex: 0 0 40px;
+  }
+  .header__list {
+    display: block; //otklyu4aem display flex
+  }
+  .header__list li{
+    margin: 0 0 20px 0;
+  }
+}
+
+.content {
+  padding-top: 100px; //tak kak wapka 80px i ona nakruvaet text
+  &__text {
+    font-size: 18px;
+    line-height: 20px;
+    p {
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+@media (max-width:767px) {
+  body.lock {// blokirovka scroll s klasom iz JS
+    overflow: hidden;
+  }
+  .content {
+    padding: 70px 0 0 0;
+  }
+}
