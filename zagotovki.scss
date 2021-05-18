@@ -7,6 +7,20 @@
     img {
       max-width: 100%;
     }
+    
+//strelka
+    &__content {
+    padding: 70px 65px 55px 65px;
+    position: relative;
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 100px solid #fff;
+    }
+  }
 
 //цыкл окружности
 @mixin circle($width, $color) {
